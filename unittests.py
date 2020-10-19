@@ -1,9 +1,13 @@
 import warmup2
 import unittest
+import validparentheses
 
 class TestFunction(unittest.TestCase):
-    def testSum001(self):
-        self.assertTrue(warmup2.sum(1, 1), 2)
+    def testCaseEmptyString(self):
+        self.assertTrue(validparentheses.is_valid(''))
+
+    def testInvalidCase001(self):
+        self.assertFalse(validparentheses.is_valid('('))
 
 
 if __name__ == '__main__':
