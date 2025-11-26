@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+from wc.wordcounter import count_bytes
 
 def main():
     if len(sys.argv) < 3:
@@ -12,7 +13,8 @@ def main():
 
     match option:
         case "-c":
-            print("Option -c selected")
+            size_bytes = count_bytes(file_name)
+            print("{} {}".format(size_bytes, file_name))
         case "-l":
             print("Option -l selected")
         case "-w":
