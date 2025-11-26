@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import sys
-from wc.wordcounter import count_bytes, count_lines
+from wc.wordcounter import count_bytes, count_lines, count_words
 
 def main():
     if len(sys.argv) < 3:
@@ -18,7 +18,7 @@ def main():
             case "-l":
                 print_number_lines(file_name)
             case "-w":
-                print("Option -w selected")
+                print_total_words(file_name)
             case "-m":
                 print("Option -m selected")
             case _:
@@ -35,6 +35,10 @@ def print_file_size_in_bytes(file_name):
 def print_number_lines(file_name):
     number_lines = count_lines(file_name)
     print("{} {}".format(number_lines, file_name))
+
+def print_total_words(file_name):
+    number_words = count_words(file_name)
+    print("{} {}".format(number_words, file_name))
 
 if __name__ == "__main__":
     main()
