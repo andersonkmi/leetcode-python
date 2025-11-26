@@ -14,8 +14,7 @@ def main():
     try:
         match option:
             case "-c":
-                size_bytes = count_bytes(file_name)
-                print("{} {}".format(size_bytes, file_name))
+                print_file_size_in_bytes(file_name)
             case "-l":
                 print("Option -l selected")
             case "-w":
@@ -30,6 +29,11 @@ def main():
         sys.exit(2)
 
     sys.exit(0)
+
+def print_file_size_in_bytes(file_name):
+    size_bytes = count_bytes(file_name)
+    print("{} {}".format(size_bytes, file_name))
+
 
 if __name__ == "__main__":
     main()
