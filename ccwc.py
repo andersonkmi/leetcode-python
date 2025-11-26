@@ -11,19 +11,23 @@ def main():
     option = sys.argv[1]
     file_name = sys.argv[2]
 
-    match option:
-        case "-c":
-            size_bytes = count_bytes(file_name)
-            print("{} {}".format(size_bytes, file_name))
-        case "-l":
-            print("Option -l selected")
-        case "-w":
-            print("Option -w selected")
-        case "-m":
-            print("Option -m selected")
-        case _:
-            print("Option {} is invalid".format(option))
-            sys.exit(1)
+    try:
+        match option:
+            case "-c":
+                size_bytes = count_bytes(file_name)
+                print("{} {}".format(size_bytes, file_name))
+            case "-l":
+                print("Option -l selected")
+            case "-w":
+                print("Option -w selected")
+            case "-m":
+                print("Option -m selected")
+            case _:
+                print("Option {} is invalid".format(option))
+                sys.exit(1)
+    except FileNotFoundError:
+        print("{} file does not exist".format(file_name))
+        sys.exit(2)
 
     sys.exit(0)
 
