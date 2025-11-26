@@ -28,8 +28,6 @@ def main():
         print("{} file does not exist".format(file_name))
         sys.exit(2)
 
-    sys.exit(0)
-
 def print_file_size_in_bytes(file_name):
     size_bytes = count_bytes(file_name)
     print("{} {}".format(size_bytes, file_name))
