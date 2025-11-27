@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import sys
-from wc.wordcounter import count_bytes, count_lines, count_words
+from wc.wordcounter import count_bytes, count_lines, count_words, count_chars
 
 def main():
     if len(sys.argv) < 3:
@@ -20,7 +20,7 @@ def main():
             case "-w":
                 print_total_words(file_name)
             case "-m":
-                print("Option -m selected")
+                print_total_chars(file_name)
             case _:
                 print("Option {} is invalid".format(option))
                 sys.exit(1)
@@ -39,6 +39,10 @@ def print_number_lines(file_name):
 def print_total_words(file_name):
     number_words = count_words(file_name)
     print("{} {}".format(number_words, file_name))
+
+def print_total_chars(file_name):
+    number_chars = count_chars(file_name)
+    print("{} {}".format(number_chars, file_name))
 
 if __name__ == "__main__":
     main()

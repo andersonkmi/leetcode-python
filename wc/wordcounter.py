@@ -21,3 +21,11 @@ def count_words(file_name):
                 words.append(word)
 
     return len(words)
+
+def count_chars(file_name):
+    total_chars = 0
+    with open(file_name, encoding="utf-8") as file:
+        for line in file:
+            total_chars += len(line)
+            total_chars +=1
+    return total_chars
